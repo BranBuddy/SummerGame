@@ -27,13 +27,13 @@ public class CCube
     {
         int x = (int)coord.x; 
         int y = (int)coord.y;
-        int q = y - (x - (x&1)) / 2;
-        return new CCube(q, x, -q-x);
+        int q = x - (y - (y&1)) / 2;
+        return new CCube(q, y, -q-y);
     }
 
     public Vector2Int FromCube()
     {
-        return new Vector2Int(r, q + (r - (r&1))/2);
+        return new Vector2Int(q + (r - (r&1))/2, r);
     }
 
     private static CCube[] directions = {
@@ -41,5 +41,5 @@ public class CCube
         new CCube(-1, 0, 1), new CCube(-1, 1, 0), new CCube(0, 1, -1), 
     };
 
-    public static CCube[] Directions {get;}
+    public static CCube[] Directions {get { return directions; }}
 }

@@ -15,14 +15,9 @@ public class TileManager : MonoBehaviour
     //Temp. fleet object for testing
     public GameObject fleetGhost;
 
-    //Temp. UI object for testing
-    public TextMeshProUGUI tileText;
-
     //Stores all tiles on the map
     private Tile[][] tiles;
-    public Tile[][] Tiles {get;}
-
-    public Tile selectedTile;
+    public Tile[][] Tiles {get { return tiles; }}
 
     //Dimensions of the tile grid
     [SerializeField]
@@ -30,8 +25,8 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     private int height = 5;
 
-    public int Width {get;}
-    public int Height {get;}
+    public int Width {get{ return width; }}
+    public int Height {get{ return height; }}
 
     void Awake()
     {
@@ -42,23 +37,6 @@ public class TileManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
-    }
-    
-    void Update()
-    {
-        if(Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Vector3 pos = Input.mousePosition;
-            Ray ray = cam.ScreenPointToRay(pos);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 3))
-            {
-                if(selectedTile) selectedTile.Deselect();
-                selectedTile = hit.collider.gameObject.GetComponent<Tile>();
-                selectedTile.Select();
-                tileText.text = (selectedTile.IsOccupied() ? selectedTile.Contains.Name : "Empty") + " | "+selectedTile.pos;
-            }
-        }
     }
 
     void Start()
@@ -72,16 +50,15 @@ public class TileManager : MonoBehaviour
         for(int i = 0; i < width; i++)
             tiles[i] = new Tile[height];
 
-        float w = tileObject.transform.localScale.x;
-        float h = tileObject.transform.localScale.y;
+        float size = tileObject.transform.localScale.x;
 
         for(int x = 0; x < width; x++)
         {
             for(int y = 0; y < height; y++)
             {
                 GameObject newTile = Instantiate(tileObject);
-                float xSize = Mathf.Sqrt(3) * w / 2;
-                float ySize = h * 3f/4f;
+                float xSize = Mathf.Sqrt(3) * size / 2;
+                float ySize = size * 3f/4f;
                 Vector3 offset = new Vector3((xSize * x) + (y%2 * xSize/2) , 0, ySize * y);
                 newTile.transform.position = gameObject.transform.position + offset;
 

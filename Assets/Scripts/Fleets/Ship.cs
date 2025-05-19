@@ -1,22 +1,16 @@
 using UnityEngine;
 
-public class Ship : MonoBehaviour
+public class Ship
 {
     string shipName;
     int speed;
 
     public string Name {get{return shipName;}}
-    public int Speed {get;}
+    public int Speed {get{ return speed; }}
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Ship(string name, int speed)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.shipName = name;
+        this.speed = speed;
     }
 }

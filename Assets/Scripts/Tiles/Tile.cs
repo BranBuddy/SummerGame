@@ -21,7 +21,8 @@ public class Tile : MonoBehaviour
         if(UnityEngine.Random.value < .25f)
         {
             GameObject ghost = Instantiate(TileManager.instance.fleetGhost);
-            ghost.transform.position = gameObject.transform.position + Vector3.up;
+            ghost.transform.position = gameObject.transform.position;
+            ghost.transform.parent = gameObject.transform;
             contains = ghost.GetComponent<Fleet>();
         }
     }
@@ -47,11 +48,12 @@ public class Tile : MonoBehaviour
         Vector2Int[] points = GetAdjacentPoints();
         List<Tile> tiles = new List<Tile>();
 
-        foreach(Vector2Int p in points)
+        foreach (Vector2Int p in points)
         {
-            if(p.x < 0 || p.x >= TileManager.instance.Width) continue;
-            if(p.y < 0 || p.y >= TileManager.instance.Height) continue;
-
+            Debug.Log(p);
+            if (p.x < 0 || p.x >= TileManager.instance.Width) continue;
+            if (p.y < 0 || p.y >= TileManager.instance.Height) continue;
+            
             tiles.Add(TileManager.instance.Tiles[p.x][p.y]);
         }
 
@@ -60,11 +62,25 @@ public class Tile : MonoBehaviour
 
     public void Select()
     {
+        if (contains) contains.OnSelected();
+        selectedInd.GetComponent<MeshRenderer>().material = SelectionManager.instance.SelectMat;
         selectedInd.SetActive(true);
+    }
+
+    public void Highlight()
+    {
+        selectedInd.GetComponent<MeshRenderer>().material = SelectionManager.instance.NavHighlightMat;
+        selectedInd.SetActive(true);
+    }
+
+    public void Unhighlight()
+    {
+        selectedInd.SetActive(false);
     }
 
     public void Deselect()
     {
+        if (contains) contains.OnDeselected();
         selectedInd.SetActive(false);
     }
 }
