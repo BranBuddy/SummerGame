@@ -180,7 +180,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -208,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.60876125, y: -0, z: -0, w: 0.7933535}
-  m_LocalPosition: {x: 13.8, y: 34.2, z: -3.55}
+  m_LocalPosition: {x: 13.8, y: 34.46, z: -3.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef805a6109f71a49aed234e7f9756ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,8 +455,8 @@ MonoBehaviour:
   cam: {fileID: 330585545}
   tileObject: {fileID: 7237439844348299523, guid: 6f9af2c0bb6132d41af22c01b20f5bf3, type: 3}
   fleetGhost: {fileID: 5776839249988696884, guid: 5f7a884b56f9177438c67ca02896b798, type: 3}
-  width: 10
-  height: 10
+  width: 15
+  height: 15
 --- !u!4 &717195938
 Transform:
   m_ObjectHideFlags: 0
@@ -897,6 +898,7 @@ MonoBehaviour:
   tileText: {fileID: 1194991709}
   selectMat: {fileID: 2100000, guid: 681334bf75f8db540826c6bc46be26fb, type: 2}
   navHighlightMat: {fileID: 2100000, guid: f5d5236485abe014fb14566474e8d3b6, type: 2}
+  navErrorMat: {fileID: 2100000, guid: ebd238e538c53fc4aa491c341c55a43c, type: 2}
 --- !u!4 &1367978907
 Transform:
   m_ObjectHideFlags: 0
