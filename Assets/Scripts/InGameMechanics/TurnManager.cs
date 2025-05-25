@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+
+//By Brandon
+
 public class TurnManager : MonoBehaviour
 {
     //Current turn counter

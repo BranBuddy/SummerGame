@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using Random = UnityEngine.Random;
+
+//By Brandon
+
 public class RollDice : MonoBehaviour
 {
     private int[] playerRoll = {1, 1, 1, 1};

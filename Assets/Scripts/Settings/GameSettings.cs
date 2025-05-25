@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//By Brandon
+
 public class GameSettings : MonoBehaviour
 {
     private TurnManager turnManager;
