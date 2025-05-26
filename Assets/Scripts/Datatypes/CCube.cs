@@ -1,3 +1,11 @@
+/*
+    CCube.cs
+    
+    Last edited by:
+    Luke Cullen
+
+    5/26/25
+*/
 using UnityEngine;
 using Unity.Collections;
 

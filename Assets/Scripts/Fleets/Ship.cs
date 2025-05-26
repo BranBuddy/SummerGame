@@ -1,3 +1,11 @@
+/*
+    Ship.cs
+    
+    Last edited by:
+    Luke Cullen
+
+    5/26/25
+*/
 using UnityEngine;
 
 //Basic ship entity, only ingame when in a fleet

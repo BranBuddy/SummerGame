@@ -1,3 +1,11 @@
+/*
+    SelectionManager.cs
+    
+    Last edited by:
+    Luke Cullen
+
+    5/26/25
+*/
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -62,7 +70,7 @@ public class SelectionManager : MonoBehaviour
             //(running djikstra's every frame is probably a bad idea...)
             if (GetCurTile() != selectedTile.contains.Destination)
                 //find path to hovered tile, if hovering on void this clears the fleets destination 
-                selectedTile.contains.Pathfind(GetCurTile()); 
+                selectedTile.contains.Pathfind(GetCurTile());
         }
 
         //When right click is released and we have a selected tile

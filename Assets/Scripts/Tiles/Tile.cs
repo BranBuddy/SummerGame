@@ -1,3 +1,11 @@
+/*
+    Tile.cs
+    
+    Last edited by:
+    Luke Cullen
+
+    5/26/25
+*/
 using System;
 using System.Collections;
 using System.Collections.Generic;

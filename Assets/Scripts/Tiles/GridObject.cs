@@ -1,3 +1,11 @@
+/*
+    GridObject.cs
+    
+    Last edited by:
+    Luke Cullen
+
+    5/26/25
+*/
 using UnityEngine;
 
 //wrapper class for objects that are placed on the grid
