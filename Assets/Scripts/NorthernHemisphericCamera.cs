@@ -6,7 +6,7 @@ using UnityEditor.ShaderGraph.Internal;
 using Unity.Cinemachine;
 
 // Script Made By: Istvan Wallace
-// Last Edited: Camera rotations - 5/26/25
+// Last Edited: change controls - 5/27/25
 public class NorthernHemisphericCamera : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera CinemachineCamera;
