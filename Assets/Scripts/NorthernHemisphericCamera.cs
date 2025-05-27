@@ -5,6 +5,8 @@ using NUnit.Framework.Constraints;
 using UnityEditor.ShaderGraph.Internal;
 using Unity.Cinemachine;
 
+// Script Made By: Istvan Wallace
+// Last Edited: Camera rotations - 5/26/25
 public class NorthernHemisphericCamera : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera CinemachineCamera;
@@ -12,6 +14,7 @@ public class NorthernHemisphericCamera : MonoBehaviour
     [Header("Camera Controls")]
     [SerializeField] float moveSpeed = 50f; // Controls how fast camera moves
     [SerializeField] float rotateSpeed = 100f; // Controls how fast camera rotates
+    private bool rightClickDown = false; // Controls right-click rotations
 
     [Header("Drag Pan Controls")]
     public float dragPanSpeed = 2f;
@@ -77,14 +80,16 @@ public class NorthernHemisphericCamera : MonoBehaviour
     {
         Vector3 inputDir = new Vector3(0, 0, 0);
 
-        if (Input.GetMouseButtonDown(0)) // On right click press start pan
+        if (Input.GetMouseButtonDown(0)) // On left click press start pan
         {
             dragPanMoveActive = true;
             lastMousePosition = Input.mousePosition;
+            Cursor.visible = false; // Hides the cursor
         }
-        if (Input.GetMouseButtonUp(0)) // On right click release stop pan
+        if (Input.GetMouseButtonUp(0)) // On left click release stop pan
         {
             dragPanMoveActive = false;
+            Cursor.visible = true; // Shows the cursor again
         }
         if (dragPanMoveActive)
         {
@@ -103,8 +108,31 @@ public class NorthernHemisphericCamera : MonoBehaviour
     private void HandleCameraRotation()
     {
         float rotateDir = 0f; // sets value of rotate direction
-        if (Input.GetKey(KeyCode.Q)) rotateDir = +1f; // Controls clockwise camera rotations
-        if (Input.GetKey(KeyCode.E)) rotateDir = -1f; // Control counter-clockwise camera rotations
+        // Key Rotations:
+        // if (Input.GetKey(KeyCode.Q)) rotateDir = +1f; // Controls clockwise camera rotations 
+        // if (Input.GetKey(KeyCode.E)) rotateDir = -1f; // Control counter-clockwise camera rotations
+
+        // Mouse Rotations
+        if (Input.GetMouseButtonDown(1)) // On mouse right-click down
+        {
+            rightClickDown = true;
+            // Debug.Log("Right-Click pressed!");
+            Cursor.lockState = CursorLockMode.Locked; // Locks the cursor to the center of the screen
+            Cursor.visible = false; // Hides the cursor
+        }
+        if (Input.GetMouseButtonUp(1)) // On mouse right-click release
+        {
+            rightClickDown = false;
+            Cursor.lockState = CursorLockMode.None; // Frees the cursor
+            Cursor.visible = true; // Shows the cursor again
+        }
+        if (rightClickDown) // If true execute:
+        {
+            float mouseX = Input.GetAxis("Mouse X"); // Gets mouse 'x' value
+            transform.Rotate(Vector3.up, mouseX * rotateSpeed * Time.deltaTime); // Roatate based on mouse.x value
+        }
+            
+
 
         transform.eulerAngles += new Vector3(0, rotateDir * rotateSpeed * Time.deltaTime, 0); // Transforms camera rotation
     }
