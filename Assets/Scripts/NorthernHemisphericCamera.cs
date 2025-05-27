@@ -113,14 +113,14 @@ public class NorthernHemisphericCamera : MonoBehaviour
         // if (Input.GetKey(KeyCode.E)) rotateDir = -1f; // Control counter-clockwise camera rotations
 
         // Mouse Rotations
-        if (Input.GetMouseButtonDown(1)) // On mouse right-click down
+        if (Input.GetMouseButtonDown(2)) // On mouse right-click down
         {
             rightClickDown = true;
             // Debug.Log("Right-Click pressed!");
             Cursor.lockState = CursorLockMode.Locked; // Locks the cursor to the center of the screen
             Cursor.visible = false; // Hides the cursor
         }
-        if (Input.GetMouseButtonUp(1)) // On mouse right-click release
+        if (Input.GetMouseButtonUp(2)) // On mouse right-click release
         {
             rightClickDown = false;
             Cursor.lockState = CursorLockMode.None; // Frees the cursor
