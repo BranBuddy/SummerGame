@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: e23ac69b9c9870f4a8a404a454b583ad
+  - enabled: 1
+    path: Assets/Scenes/MapTestScene.unity
+    guid: 29e9892197809a5419d48572236a9015
+  - enabled: 1
+    path: Assets/Scenes/RollTestScene.unity
+    guid: 404aaedf8148570479d5d8b96da2fba5
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/MapGen.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CreateSessionScene.unity
+    guid: e4c776ff6db35a946b0e27a1962c3d97
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
