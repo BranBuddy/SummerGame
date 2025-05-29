@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5839900846461529270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6920718045024812560}
+  - component: {fileID: 8259711138327679866}
+  m_Layer: 0
+  m_Name: TurnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6920718045024812560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839900846461529270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8259711138327679866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839900846461529270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0ed0f815e709148bd2b8e054520e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 7772255436442567744, guid: c5ae90c3994af264ca715050ba1aeba6, type: 3}
+  banners:
+  - {fileID: 8702115050782304584, guid: ded4159feed47234eb22090fc5f33f62, type: 3}
+  - {fileID: 294225169402069087, guid: 6e1fe36fb9856a845817378a7f777269, type: 3}
+  - {fileID: 1952854371271196461, guid: 8772121dcac2d724db952a03bf099352, type: 3}
+  - {fileID: 4703374808055364072, guid: 923ee5f80fb18cc4e860dec7564eff27, type: 3}
+  - {fileID: 2851311801579232400, guid: 2b1452e5b43a54f46a232359c76703e3, type: 3}
+  Player1: {fileID: 7772255436442567744, guid: c5ae90c3994af264ca715050ba1aeba6, type: 3}
+  Player2: {fileID: 6910367417625768544, guid: 24b4847e54ec42140ba272559bdd87a3, type: 3}
+  Player3: {fileID: 6910367417625768544, guid: 24b4847e54ec42140ba272559bdd87a3, type: 3}
+  Player4: {fileID: 1994355300614575235, guid: 7430be9226606144c89e4f5f228c708b, type: 3}
+  NPC: {fileID: 9040012356674437573, guid: 61a3eb3127e3d5c478a43690a6802a71, type: 3}
+  playerNumber: 0
+  whatTurnIsIt: {fileID: 7210941558492379950, guid: 412e951caa601474ebb686a2cd409987, type: 3}
+  howManyTurns: 20
