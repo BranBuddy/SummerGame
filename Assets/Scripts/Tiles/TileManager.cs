@@ -23,6 +23,10 @@ public class TileManager : MonoBehaviour
     //Temp. fleet object for testing
     public GameObject fleetGhost;
 
+    //stores game manager prefab
+    private GameObject gameManager;
+
+
     //Stores all tiles on the map
     private Tile[][] tiles;
     public Tile[][] Tiles { get { return tiles; } }
@@ -49,6 +53,12 @@ public class TileManager : MonoBehaviour
 
     void Start()
     {
+        if (GameObject.Find("GameManager") != null) 
+        {
+            gameManager = GameObject.Find("GameManager");
+            width = gameManager.GetComponent<SceneChange>().GetMapSize();
+            height = gameManager.GetComponent<SceneChange>().GetMapSize();
+        }
         //Generates a grid when the manager is created
         GenerateGrid();
     }
