@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964175380}
+      - m_Target: {fileID: 1055842883}
         m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
         m_MethodName: FourPlayers
         m_Mode: 1
@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964175380}
+      - m_Target: {fileID: 1055842883}
         m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
         m_MethodName: ThreePlayers
         m_Mode: 1
@@ -3226,6 +3226,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055672416}
   m_CullTransparentMesh: 1
+--- !u!1 &1055842882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055842884}
+  - component: {fileID: 1055842883}
+  m_Layer: 0
+  m_Name: SettingsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1055842883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055842882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03b95fb535dd92488825c50b8babba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1055842884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055842882}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 570.7033, y: 253.7589, z: 6.471595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111481087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3625,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964175380}
+      - m_Target: {fileID: 1055842883}
         m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
         m_MethodName: SinglePlayer
         m_Mode: 1
@@ -6207,7 +6251,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964175380}
+      - m_Target: {fileID: 1055842883}
         m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
         m_MethodName: TwoPlayers
         m_Mode: 1
@@ -6402,9 +6446,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964175379}
-  - component: {fileID: 1964175380}
   m_Layer: 5
-  m_Name: PlayerManager
+  m_Name: PlayerButtonHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6434,18 +6477,6 @@ RectTransform:
   m_AnchoredPosition: {x: -33.8, y: 5.2}
   m_SizeDelta: {x: 17.402567, y: 10.379101}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1964175380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964175378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03b95fb535dd92488825c50b8babba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1968601931
 GameObject:
   m_ObjectHideFlags: 0
@@ -6809,3 +6840,4 @@ SceneRoots:
   - {fileID: 1515475684}
   - {fileID: 899355357}
   - {fileID: 161599811}
+  - {fileID: 1055842884}
